@@ -1,1 +1,2 @@
 source setup_database.sql
+source setup_foreign_keys.sql

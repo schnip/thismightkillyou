@@ -38,6 +38,8 @@ d_num int not null auto_increment,
 d_text varchar(4095),
 );
 
+-- Tables used for creating new recipes
+
 create table if not exists gen_foods(
 name varchar(255),
 ara boolean,
@@ -60,4 +62,9 @@ create table if not exists gen_type(
 type varchar(255),
 parent varchar(255),
 primary key(type)
+);
+
+create table if not exists gen_title(
+word varchar(255),
+primary key(word)
 );
