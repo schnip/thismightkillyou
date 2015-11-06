@@ -36,4 +36,4 @@ values
 insert into gen_type
 (type,parent)
 values
-('chunks','shreds');
+('chunks','solid');
