@@ -19,3 +19,24 @@ REFERENCES recipes(id)
 ON DELETE CASCADE;
 
 -- This is for the tables that are used in creating the new recipes
+
+ALTER TABLE gen_food
+ADD FOREIGN KEY (type)
+REFERENCES gen_type(type)
+ON DELETE CASCADE;
+
+ALTER TABLE gen_steps
+ADD FOREIGN KEY (primary_type)
+REFERENCES gen_type(type)
+ON DELETE CASCADE;
+
+ALTER TABLE gen_steps
+ADD FOREIGN KEY (secondary_type)
+REFERENCES gen_type(type)
+ON DELETE CASCADE;
+
+ALTER TABLE gen_steps
+ADD FOREIGN KEY (result_type)
+REFERENCES gen_type(type)
+ON DELETE CASCADE;
+
