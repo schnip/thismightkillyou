@@ -68,3 +68,9 @@ create table if not exists gen_title(
 word varchar(255),
 primary key(word)
 );
+
+create table if not exists gen_quantities(
+quantity varchar(255),
+type varchar(255),
+primary key(quantity)
+);
