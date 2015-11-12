@@ -37,3 +37,8 @@ insert into gen_type
 (type,parent)
 values
 ('chunks','solid');
+
+insert into gen_type
+(type,parent)
+values
+('slices','solid');
