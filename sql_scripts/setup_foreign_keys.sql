@@ -41,6 +41,6 @@ REFERENCES gen_type(type)
 ON DELETE CASCADE;
 
 ALTER TABLE gen_quantities
-ADD FOREIGN KEY (result_type)
+ADD FOREIGN KEY (type)
 REFERENCES gen_type(type)
 ON DELETE CASCADE;

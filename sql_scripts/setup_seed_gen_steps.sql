@@ -11,14 +11,9 @@ values
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('layer','on','ccccccc', false,'solid','base','solid');
+('layer','on','base', true,'solid','base','solid');
 
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('layer','on','ccccccc', false,'sauce','base','solid');
-
-insert into gen_steps
-(primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
-values
-('aaaaaa','bbbbbb','ccccccc', false,'ddddddd','eeeeeeee','fffffffff');
+('spread','on','base', false,'sauce','base','solid');

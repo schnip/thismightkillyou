@@ -26,7 +26,7 @@ constraint pk_username_recipe_id primary key (username, recipe_id)
 
 create table if not exists ingredients(
 recipe_id int,
-i_num int not null auto_increment,
+i_num int,
 quantity varchar(255),
 name varchar(255),
 constraint pk_recipe_ingredient primary key (recipe_id, i_num)
@@ -34,13 +34,14 @@ constraint pk_recipe_ingredient primary key (recipe_id, i_num)
 
 create table if not exists directions(
 recipe_id int,
-d_num int not null auto_increment,
+d_num int not null,
 d_text varchar(4095),
+constraint pk_recipe_direction primary key (recipe_id, d_num)
 );
 
 -- Tables used for creating new recipes
 
-create table if not exists gen_foods(
+create table if not exists gen_food(
 name varchar(255),
 ara boolean,
 type varchar(255),
