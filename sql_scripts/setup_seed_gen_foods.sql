@@ -46,7 +46,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('ham', true, 'slicess');
+('ham', true, 'slices');
 
 insert into gen_food
 (name, ara, type)
