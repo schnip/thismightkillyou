@@ -1,5 +1,5 @@
 <?php
-// This won't work until we actually have some data, so next task is to write the helpers necessary
+// This won't work until we actually have some data, so next task is to write the helpers necessary to create data
 
 $db = new PDO("mysql:dbname=imdb;host=localhost", "user", "t3st");
 $rows = $db->query("select * from recipes order by RAND() limit 1;");
