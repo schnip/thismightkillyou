@@ -18,5 +18,6 @@ $query = $query . " order by RAND() limit 1;";
 $rows = $db->query($query);
 foreach ($rows as $row) {
 	echo $row['name'];
+	echo $row['type'];
 }
 ?>
