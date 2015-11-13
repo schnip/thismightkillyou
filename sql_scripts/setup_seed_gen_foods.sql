@@ -121,11 +121,6 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('taco', true, 'base');
-
-insert into gen_food
-(name, ara, type)
-values
 ('french fries', true, 'solid');
 
 insert into gen_food
@@ -151,7 +146,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('sesame noodles', true, 'solid');
+('sesame noodles', true, 'shreds');
 
 insert into gen_food
 (name, ara, type)
@@ -281,7 +276,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('chow mein noodles', true, 'solid');
+('chow mein noodles', true, 'shreds');
 
 
 insert into gen_food
@@ -317,7 +312,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('melon', true, 'chunks');
+('melon', true, 'slices');
 
 insert into gen_food
 (name, ara, type)
