@@ -1,0 +1,1 @@
+mysql -u root -p < setup_all.sql
