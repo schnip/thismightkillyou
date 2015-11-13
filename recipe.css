@@ -1,0 +1,55 @@
+.element {
+    margin-top: 100px;
+}
+
+#likeIt {
+    margin-left: 40px;
+    font-size: 80px;
+    color: #ff3333;
+}
+
+#hateIt {
+    margin-left: 40px;
+    font-size: 80px;
+}
+
+#likeIt p {
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: -55px;
+    margin-left: 20px;
+}
+
+#hateIt p {
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: -55px;
+    margin-left: 20px;
+}
+
+.recipe {
+    position: relative;
+}
+
+#ratingsAndGeneration {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.rating {
+    cursor: pointer;
+    display: block;
+    height: 80px;
+}
+
+#ratingsAndGeneration button {
+    height: 40px;
+    margin-top: 20px;
+    width: 160px;
+}
+
+#comments input {
+    width: 100%;
+    height: 200px;
+}
