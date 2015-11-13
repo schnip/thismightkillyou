@@ -26,24 +26,24 @@ values
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('sprinkle','on','stuff', true,'shreds','solid','solid';)
+('sprinkle','on','stuff', true,'shreds','solid','solid');
 
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('sprinkle','on','stuff', true,'shreds','food','solid';)
+('sprinkle','on','stuff', true,'shreds','food','solid');
 
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('soak','in','soggy stuff', true,'solid','liquid','solid';)
+('soak','in','soggy stuff', true,'solid','liquid','solid');
 
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('stew','together with','a stew', true,'solid','solid','liquid';)
+('stew','together with','a stew', true,'solid','solid','liquid');
 
 insert into gen_steps
 (primary_action, secondary_action, result, ara, primary_type, secondary_type, result_type)
 values
-('stew','together with','a stew', true,'solid','solid','liquid';)
+('stew','together with','a stew', true,'solid','solid','liquid');

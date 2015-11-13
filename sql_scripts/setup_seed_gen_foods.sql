@@ -394,8 +394,3 @@ insert into gen_food
 values
 ('sunflower seeds', true, 'chunks');
 
-insert into gen_food
-(name, ara, type)
-values
-('sunflower seeds', true, 'chunks');
-
