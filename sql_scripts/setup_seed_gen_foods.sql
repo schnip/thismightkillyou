@@ -206,7 +206,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('chedder cheese', true, 'shreds');
+('chedder cheese shreds', true, 'shreds');
 
 insert into gen_food
 (name, ara, type)
@@ -278,7 +278,6 @@ insert into gen_food
 values
 ('chow mein noodles', true, 'shreds');
 
-
 insert into gen_food
 (name, ara, type)
 values
@@ -322,7 +321,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('lemon wedges', true, 'slicess');
+('lemon wedges', true, 'slices');
 
 insert into gen_food
 (name, ara, type)
@@ -352,17 +351,7 @@ values
 insert into gen_food
 (name, ara, type)
 values
-('radishes', true, 'chunks');
-
-insert into gen_food
-(name, ara, type)
-values
 ('sliced celery', true, 'chunks');
-
-insert into gen_food
-(name, ara, type)
-values
-('radishes', true, 'chunks');
 
 insert into gen_food
 (name, ara, type)
