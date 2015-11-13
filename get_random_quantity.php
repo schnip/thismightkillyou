@@ -9,5 +9,7 @@ $query = $query . " order by RAND() limit 1;";
 $rows = $db->query($query);
 foreach ($rows as $row) {
 	echo $row['quantity'];
+	echo "\n";
+	echo $row['type'];
 }
 ?>
