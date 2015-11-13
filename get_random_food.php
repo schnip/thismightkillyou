@@ -17,8 +17,10 @@ $query = $query . " order by RAND() limit 1;";
 
 $rows = $db->query($query);
 foreach ($rows as $row) {
-	echo $row['name'];
+	$data = array('name' => $row['name'], 'type' => $row['type']);
+	echo json_encode($data);
+/*	echo $row['name'];
 	echo "\n";
-	echo $row['type'];
+	echo $row['type'];*/
 }
 ?>

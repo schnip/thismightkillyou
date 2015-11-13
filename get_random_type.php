@@ -8,6 +8,8 @@ $query = $query . " order by RAND() limit 1;";
 
 $rows = $db->query($query);
 foreach ($rows as $row) {
-	echo $row['type'];
+	$data = array('type' => $row['type']);
+	echo json_encode($data);
+	//echo $row['type'];
 }
 ?>
