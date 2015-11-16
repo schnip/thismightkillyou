@@ -1,3 +1,4 @@
 <?php
-exec('git pull');
+exec('git pull', $output);
+print_r($output);
 ?>
