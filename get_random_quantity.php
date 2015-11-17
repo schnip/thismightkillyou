@@ -3,7 +3,7 @@ $db = new PDO("mysql:dbname=thismightkillyou;host=localhost", "user", "t3st");
 if (isset($_GET['multi'])) {
 	$num = -1;
 	$data = array();
-	while(isset('type' . ++$num)) {
+	while(isset($_GET['type' . ++$num])) {
 		$query = "select * from gen_quantities";
 		if (isset($_GET['type' . $num])) {
 			$query = $query . ' where type = ' . $db->quote($_GET['type' . $num]);
