@@ -1,0 +1,23 @@
+--food
+
+--solid
+chocolate chip cookie
+oatmeal raisin cookie
+sugar cookie
+peanut putter cookie
+
+--base
+
+--chunks
+
+--shreds
+lettuce
+
+--slices
+
+--liquid
+
+--sauce
+ketchup
+
+--gelatin
