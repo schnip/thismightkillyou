@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
 
     <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="stylesheet" type="text/css" href="nav.css" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
@@ -18,27 +19,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.html">Home</a>
-            </div>
-
-            <div class="navbar-content">
-                <a id="normalMeals" class="">Normal Meals</a>
-                <a id="ARAMeals" class="navbar-link">ARA Meals</a>
-                <a id="signIn" class="navbar-link">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                        Log In
-                    </button>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#signUpModal">
-                        Sign Up
-                    </button>
-                </a>
-           </div>
-
-        </div>
-    </nav>
+    <?php include("nav.php"); ?>
 
 
     <div class="content container">
@@ -46,7 +27,7 @@
         <div class="headers col-md-4 col-md-offset-4">
             <h1>This Might Kill You</h1>
             <h4>The site where you can try the recipe, but we can't guarantee your safety.</h4>
-            <a href="recipe.html">
+            <a href="recipe.php">
                 <button id="generateRecipe" class="btn btn-info">
                     Generate New Recipe
                 </button>

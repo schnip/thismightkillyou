@@ -96,17 +96,23 @@ $(function() {
 
     }
 
-    $('#likeIt').click(function() {
-        $('#hateIt').show();
-        $('#likeIt').hide();
-        $('#likeText').show();
-        $('#hateText').hide();
+    $('#generateRecipe').click(function() {
+       window.location.href = window.location.href;
     });
 
-    $('#hateIt').click(function() {
-        $('#hateIt').hide();
-        $('#likeIt').show();
-        $('#likeText').hide();
-        $('#hateText').show();
-    });
+
+    //
+    //$('#likeIt').click(function() {
+    //    $('#hateIt').show();
+    //    $('#likeIt').hide();
+    //    $('#likeText').show();
+    //    $('#hateText').hide();
+    //});
+    //
+    //$('#hateIt').click(function() {
+    //    $('#hateIt').hide();
+    //    $('#likeIt').show();
+    //    $('#likeText').hide();
+    //    $('#hateText').show();
+    //});
 });

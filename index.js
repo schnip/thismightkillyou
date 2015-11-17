@@ -7,12 +7,21 @@ $(function() {
     $('#reenterPassword').keyup(checkPassword);
 
     $('#completeSignUp').click(function() {
-        $('#signUpModal').modal('hide');
+        var password = $('passwordSignUp').val();
+        var username = $('usernameSignUp').val();
+
+        $.ajax({
+            type: "GET",
+            url: 'add_new_user.php',
+            data: {username: username, password: password}
+
+        }).done(function() {
+            $('#signUpModal').modal('hide');
+        });
     });
 });
 
 var checkPassword = function() {
-    console.log("CHECKED");
     var original = $('#passwordSignUp').val();
     var check = $('#reenterPassword').val();
 

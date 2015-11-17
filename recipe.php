@@ -6,12 +6,16 @@
     <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="recipe.css"/>
+    <link rel="stylesheet" type="text/css" href="nav.css" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="underscore.js"></script>
     <script src="recipe.js"></script>
 </head>
 <body>
+
+    <?php include("nav.php"); ?>
+
     <div class="recipe container">
         <h1 id="recipeName"></h1>
 
