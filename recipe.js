@@ -2,6 +2,10 @@
  * Created by wrightjt on 11/13/2015.
  */
 $(function() {
+
+    $('#likeText').hide();
+    $('#hateText').hide();
+
     var numberOfItems = Math.floor(Math.random() * 4) + 4;
     var materials = [];
     var ingredients = [];
@@ -77,4 +81,18 @@ $(function() {
         instructionPointer++;
 
     }
+
+    $('#likeIt').click(function() {
+        $('#hateIt').show();
+        $('#likeIt').hide();
+        $('#likeText').show();
+        $('#hateText').hide();
+    });
+
+    $('#hateIt').click(function() {
+        $('#hateIt').hide();
+        $('#likeIt').show();
+        $('#likeText').hide();
+        $('#hateText').show();
+    });
 });
