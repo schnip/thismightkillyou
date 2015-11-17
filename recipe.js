@@ -40,11 +40,18 @@ $(function() {
             }
         });
 
-        toGive = {};
+        toGive = {multi: true};
         _.each(types, function(type, i) {
             var tempString = "type" + i;
             toGive[tempString] = type;
         });
+
+        $.ajax({
+            type: "GET",
+            url: 'get_random_title.php'
+        }).done(function(data) {$('#recipeName').text(materials[0] + " " + JSON.parse(data).title + " " + types[0]);
+        });
+
 
         $.ajax({
             type: "GET",
@@ -59,19 +66,32 @@ $(function() {
         var quantity = parsedData.quantity;
 
         console.log(quantity);
+
+        _.each(quantity, function(recipe, i) {
+           $('#listOfItems').prepend('<li>' + recipe + " " + materials[i] + '</li>');
+
+            $.ajax({
+                type: "GET",
+                url: 'get_random_step.php'
+            }).done(generateStep);
+        });
     }
 
     function generateStep(data) {
         var finalData = JSON.parse(data);
         console.log(finalData);
-        instructions[instructionPointer] = finalData.primary_action + " " +  materials[temp++] + " ";
-        if(finalData.secondary_action !== null) {
-           instructions[instructionPointer] +=  finalData.secondary_action + " " + materials[temp++] + " to create " + finalData.result + ".";
+        if(temp < materials.length) {
+            instructions[instructionPointer] = finalData.primary_action + " " + materials[temp++] + " ";
+            if (finalData.secondary_action !== null && finalData.secondary_action !== undefined) {
+                instructions[instructionPointer] += finalData.secondary_action + " " + materials[temp++] + " to create " + finalData.result + ".";
+            } else {
+                instructions[instructionPointer] += ".";
+            }
+            $('#listOfInstructions').prepend('<li>' + instructions[instructionPointer] + '</li>');
         } else {
-            instructions[instructionPointer] += ".";
+            console.log("filled");
         }
 
-        $('#listOfInstructions').prepend('<li>' + instructions[instructionPointer] + '</li>');
         instructionPointer++;
 
     }
