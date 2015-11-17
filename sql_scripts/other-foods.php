@@ -9,7 +9,9 @@ if ($handle) {
 		} elseif (strlen($line) < 2) {
 
 		} else {
-			$query = 'insert into gen_food (name, ara, type) values ("' . $line . '",false,"' . $type . '");';
+			$inline = $string = trim(preg_replace('/\s\s+/', ' ', $line));
+			$intype = $string = trim(preg_replace('/\s\s+/', ' ', $type));
+			$query = 'insert into gen_food (name, ara, type) values ("' . $inline . '",false,"' . $intype . '");';
 			$db->exec($query);
 		}
 	}
