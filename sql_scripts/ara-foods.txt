@@ -1,0 +1,90 @@
+--food
+
+--solid
+chocolate chip cookie
+oatmeal raisin cookie
+sugar cookie
+peanut putter cookie
+turkey breast
+hamburger
+banana
+apple
+
+--base
+white bread
+whole wheat bread
+grilled chicken sandwich
+paddy melt
+grilled cheese
+cheese pizza
+pepperoni pizza
+
+--chunks
+diced tomatoes
+french fries
+penne
+diced green peppers
+diced onions
+green peppers
+jalapeno peppers
+baby carrots
+bacon bits
+banana peppers
+black olives
+mellon
+cauliflower
+corn
+cucumbers
+green peas
+radishes
+sliced celery
+snow peas
+sliced mushrooms
+sunflower seeds
+raisins
+
+--shreds
+lettuce
+spinach
+shredded cheddar cheese
+shredded mozzarella cheese
+iceberg lettuce
+grated parmesan cheese
+romaine lettuce
+shredded carrots
+
+--slices
+sliced onions
+swiss cheese
+cheddar cheese
+ham
+tomato slices
+american cheese
+
+--liquid
+soup
+egg whites
+
+--sauce
+ketchup
+honey mustard
+yellow mustard
+light mayonnaise
+vinegar
+oil
+alfredo
+apple sauce
+black beans
+ranch dressing
+italian dressing
+thousand island dressing
+blue cheese dressing
+cottage cheese
+caesar dressing
+grape jelly
+peanut butter
+
+--gelatin
+yogurt
+pudding
+jello
