@@ -21,21 +21,5 @@ foreach ($rows as $row) {
 	$data['secondary_type']=$row['secondary_type'];
 	$data['result_type']=$row['result_type'];
 	echo json_encode($data);
-/*	echo $row['id'];
-	echo "\n";
-	echo $row['primary_action'];
-	echo "\n";
-	echo $row['secondary_action'];
-	echo "\n";
-	echo $row['result'];
-	echo "\n";
-	echo $row['ara'];
-	echo "\n";
-	echo $row['primary_type'];
-	echo "\n";
-	echo $row['secondary_type'];
-	echo "\n";
-	echo $row['result_type'];
-	echo "\n";*/
 }
 ?>
