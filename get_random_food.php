@@ -14,7 +14,7 @@ if (isset($_GET['type'])) {
 	$query = $query . ' type = ' . $db->quote($_GET['type']);
 }
 if (isset($_GET['num'])) {
-	$query = $query . " order by RAND() limit " . $_GET['num']) . ";";
+	$query = $query . " order by RAND() limit " . $_GET['num'] . ";";
 } else {
 	$query = $query . " order by RAND() limit 1;";
 }
