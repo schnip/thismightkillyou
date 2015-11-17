@@ -21,15 +21,15 @@ if (isset($_GET['num'])) {
 
 $rows = $db->query($query);
 $data = array();
-$datas = array();
+$names = array();
+$types = array();
 foreach ($rows as $row) {
 	$data = array('name' => $row['name'], 'type' => $row['type']);
-	if (isset($_GET['num'])) {
-		array_push($datas, $data);
-	}
+	array_push($names, $row['name']);
+	array_push($types, $row['type']);
 }
 if (isset($_GET['num'])) {
-	$data = array('names' => $datas);
+	$data = array('names' => $names, 'types', $types);
 }
 echo json_encode($data);
 ?>
