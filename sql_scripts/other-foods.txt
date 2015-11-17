@@ -3,17 +3,31 @@
 --solid
 muffin
 scone
+meat lasagna
+onion rings
 
 --base
+pita
+taco
+spice meatball flatbread
 
 --chunks
+chunky potato chowder
+roasted vegetables
+cantalope
 
 --shreds
+sesame noodles
+chow mein noodles
 
 --slices
+lemon wedges
 
 --liquid
+chicken noodle soup
+vodka
 
 --sauce
+gravy
 
 --gelatin
