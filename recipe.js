@@ -24,73 +24,41 @@ $(function() {
         datatype: "text"
     }).done(getFoodItems).fail(function() {console.log("CANT GET FOOD") });
 
-    //function reportFood(data) {
-    //    var parsedData = JSON.parse(data);
-    //
-    //    string  = parsedData.name;
-    //
-    //    if(materials.indexOf(string) == -1) {
-    //        console.log("UH OH");
-    //        materials.push(string);
-    //
-    //        $.ajax({
-    //            type: "GET",
-    //            data: {'type': parsedData.type},
-    //            url: 'get_random_quantity.php',
-    //            datatype: "text"
-    //        }).done(reportQuantity).fail(function() {console.log("Failed"); });
-    //    } else {
-    //        console.log("Duplicate. Erasing.");
-    //    }
-    //}
-
     function getFoodItems(data) {
         console.log(data);
         var parsedData = JSON.parse(data);
 
-        names = parsedData.names;
-        types = parsedData.types;
+        var names = parsedData.names;
+        var types = parsedData.types;
 
 
 
         _.each(names, function(name) {
             if(materials.indexOf(name) == -1) {
 
-                console.log(name);
-
                 materials.push(name);
             }
         });
 
-        _.map(types, function(type, i) {
-            var string = "type" + i;
-            return {string: type};
+        toGive = {};
+        _.each(types, function(type, i) {
+            var tempString = "type" + i;
+            toGive[tempString] = type;
         });
 
         $.ajax({
             type: "GET",
-            data: {},
+            data: toGive,
             url: 'get_random_quantity.php'
-        })
+        }).done(reportQuantity);
     }
 
     function reportQuantity(data) {
-        console.log(data);
-        var newData = JSON.parse(data);
+        var parsedData = JSON.parse(data);
 
-        ingredients[ingredientPointer] = "A " + newData.type + " of " + materials[ingredientPointer];
-        $('#listOfItems').append('<li>' + ingredients[ingredientPointer] + '</li>');
-        ingredientPointer++;
+        var quantity = parsedData.quantity;
 
-        if(ingredientPointer > 0 && ingredientPointer % 2 == 0) {
-            $.ajax({
-                type: "GET",
-                url: 'get_random_step.php',
-                datatype: "text"
-            }).done(generateStep).fail(function () {
-                console.log("Failed to generate step");
-            });
-        }
+        console.log(quantity);
     }
 
     function generateStep(data) {
