@@ -8,12 +8,8 @@ $(function() {
 
     var numberOfItems = Math.floor(Math.random() * 4) + 4;
     var materials = [];
-    var ingredients = [];
     var instructions = [];
-    var recipe;
-    var string;
 
-    var ingredientPointer = 0;
     var instructionPointer = 0;
     var temp = 0;
 
@@ -99,20 +95,4 @@ $(function() {
     $('#generateRecipe').click(function() {
        window.location.href = window.location.href;
     });
-
-
-    //
-    //$('#likeIt').click(function() {
-    //    $('#hateIt').show();
-    //    $('#likeIt').hide();
-    //    $('#likeText').show();
-    //    $('#hateText').hide();
-    //});
-    //
-    //$('#hateIt').click(function() {
-    //    $('#hateIt').hide();
-    //    $('#likeIt').show();
-    //    $('#likeText').hide();
-    //    $('#hateText').show();
-    //});
 });

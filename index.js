@@ -7,8 +7,10 @@ $(function() {
     $('#reenterPassword').keyup(checkPassword);
 
     $('#completeSignUp').click(function() {
-        var password = $('passwordSignUp').val();
-        var username = $('usernameSignUp').val();
+        var password = $('#passwordSignUp').val();
+        var username = $('#usernameSignUp').val();
+
+        console.log("Username: ", username, " Password: ", password);
 
         $.ajax({
             type: "GET",
