@@ -1,6 +1,6 @@
 <?php
 $db = new PDO("mysql:dbname=thismightkillyou;host=localhost", "user", "t3st");
-$rows = $db->query("select * from recipes order by RAND() limit 1;");
+$rows = $db->query('select * from recipes where recipe_id = ' . $_GET['recipe_id'] . ';');
 foreach ($rows as $row) {
 	$recipe_id = $row['id'];
 	$recipe_name = $row['name'];
