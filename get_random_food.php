@@ -29,7 +29,7 @@ foreach ($rows as $row) {
 	array_push($types, $row['type']);
 }
 if (isset($_GET['num'])) {
-	$data = array('names' => $names, 'types', $types);
+	$data = array('names' => $names, 'types' => $types);
 }
 echo json_encode($data);
 ?>
