@@ -4,8 +4,9 @@ $query = "select * from gen_quantities";
 if (isset($_GET['type'])) {
 	$query = $query . ' where type = ' . $db->quote($_GET['type']);
 	$query = $query . ' or type in (select type from gen_type where parent = ' . $db->quote($_GET['type']) . ')';
+	//$query = $query . ' or type in (select type from gen_type where parent in (select type from gen_type where parent in' . $db->quote($_GET['type']) . '))';
 }
-$query = $query . " order by RAND() limit 100;";
+$query = $query . " order by RAND() limit 1;";
 
 $rows = $db->query($query);
 foreach ($rows as $row) {
