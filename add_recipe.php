@@ -7,5 +7,15 @@ $recipe_id = 0;
 foreach ($rows as $row) {
 	$recipe_id = $row['id'];
 }
-
+$i_num = -1;
+while(isset('ingredient' . ++$i_num)) {
+	$query = 'insert into ingredients (recipe_id, i_num, quantity, name) values (' . $recipe_id . ',' . $i_num . ',' . $db->quote($_GET['ingredient' . $i_num]) . ',' . $db->quote($_GET['quantity' . $i_num]) . ');';
+	$db->exec($query);
+}
+$d_num = -1;
+while(isset('direction' . ++$d_num)) {
+	$query = 'insert into directions (recipe_id, d_num, d_text) values (' . $recipe_id . ',' . $d_num . ',' . $db->quote($_GET['direction' . $d_num]) . ');'
+	$db->exec($query);
+}
+echo $recipe_id;
 ?>
