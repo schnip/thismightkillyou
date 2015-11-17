@@ -20,15 +20,13 @@ if (isset($_GET['num'])) {
 }
 
 $rows = $db->query($query);
+$data = array();
 $datas = array();
 foreach ($rows as $row) {
 	$data = array('name' => $row['name'], 'type' => $row['type']);
 	if (isset($_GET['num'])) {
 		array_push($datas, $data);
 	}
-/*	echo $row['name'];
-	echo "\n";
-	echo $row['type'];*/
 }
 if (isset($_GET['num'])) {
 	$data = array('names' => $datas);
