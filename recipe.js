@@ -17,35 +17,61 @@ $(function() {
     var instructionPointer = 0;
     var temp = 0;
 
-    console.log("Items: " + numberOfItems);
+    $.ajax({
+        type: "GET",
+        data: {num: numberOfItems},
+        url: 'get_random_food.php',
+        datatype: "text"
+    }).done(getFoodItems).fail(function() {console.log("CANT GET FOOD") });
 
-    for(i = 0; i < numberOfItems; i++) {
+    //function reportFood(data) {
+    //    var parsedData = JSON.parse(data);
+    //
+    //    string  = parsedData.name;
+    //
+    //    if(materials.indexOf(string) == -1) {
+    //        console.log("UH OH");
+    //        materials.push(string);
+    //
+    //        $.ajax({
+    //            type: "GET",
+    //            data: {'type': parsedData.type},
+    //            url: 'get_random_quantity.php',
+    //            datatype: "text"
+    //        }).done(reportQuantity).fail(function() {console.log("Failed"); });
+    //    } else {
+    //        console.log("Duplicate. Erasing.");
+    //    }
+    //}
+
+    function getFoodItems(data) {
+        console.log(data);
+        var parsedData = JSON.parse(data);
+
+        names = parsedData.names;
+        types = parsedData.types;
+
+
+
+        _.each(names, function(name) {
+            if(materials.indexOf(name) == -1) {
+
+                console.log(name);
+
+                materials.push(name);
+            }
+        });
+
+        _.map(types, function(type, i) {
+            var string = "type" + i;
+            return {string: type};
+        });
 
         $.ajax({
             type: "GET",
-            url: 'get_random_food.php',
-            datatype: "text"
-        }).done(reportFood).fail(function() {console.log("CANT GET FOOD") });
-    }
-
-    function reportFood(data) {
-        var parsedData = JSON.parse(data);
-
-        string  = parsedData.name;
-
-        if(materials.indexOf(string) == -1) {
-            console.log("UH OH");
-            materials.push(string);
-
-            $.ajax({
-                type: "GET",
-                //data: {'type': parsedData.type},
-                url: 'get_random_quantity.php',
-                datatype: "text"
-            }).done(reportQuantity).fail(function() {console.log("Failed"); });
-        } else {
-            console.log("Duplicate. Erasing.");
-        }
+            data: {},
+            url: 'get_random_quantity.php'
+        })
     }
 
     function reportQuantity(data) {
