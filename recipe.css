@@ -2,57 +2,57 @@
     margin-top: 100px;
 }
 
-#likeIt {
-    margin-left: 40px;
-    font-size: 80px;
-    color: #ff3333;
-}
+/*#likeIt {*/
+    /*margin-left: 40px;*/
+    /*font-size: 80px;*/
+    /*color: #ff3333;*/
+/*}*/
 
-#hateIt {
-    margin-left: 40px;
-    font-size: 80px;
-}
+/*#hateIt {*/
+    /*margin-left: 40px;*/
+    /*font-size: 80px;*/
+/*}*/
 
-#likeIt p {
-    font-size: 14px;
-    color: #ffffff;
-    margin-top: -55px;
-    margin-left: 0;
-}
+/*#likeIt p {*/
+    /*font-size: 14px;*/
+    /*color: #ffffff;*/
+    /*margin-top: -55px;*/
+    /*margin-left: 0;*/
+/*}*/
 
-#hateIt p {
-    font-size: 14px;
-    color: #ffffff;
-    margin-top: -55px;
-    margin-left: 0;
-}
+/*#hateIt p {*/
+    /*font-size: 14px;*/
+    /*color: #ffffff;*/
+    /*margin-top: -55px;*/
+    /*margin-left: 0;*/
+/*}*/
 
 .recipe {
     position: relative;
 }
 
-#ratingsAndGeneration {
-    position: absolute;
-    top: 20px;
-    right: 0;
-}
+/*#ratingsAndGeneration {*/
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*right: 0;*/
+/*}*/
 
-.rating {
-    cursor: pointer;
-    display: block;
-    height: 80px;
-}
+/*.rating {*/
+    /*cursor: pointer;*/
+    /*display: block;*/
+    /*height: 80px;*/
+/*}*/
 
-.rating p {
-    text-align: center;
-}
+/*.rating p {*/
+    /*text-align: center;*/
+/*}*/
 
 
-#ratingsAndGeneration button {
-    height: 40px;
-    margin-top: 20px;
-    width: 160px;
-}
+/*#ratingsAndGeneration button {*/
+    /*height: 40px;*/
+    /*margin-top: 20px;*/
+    /*width: 160px;*/
+/*}*/
 
 #comments input {
     width: 100%;
@@ -63,3 +63,14 @@
     margin-top: 20px;
 }
 
+.footer {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.footer button {
+    width: 48%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: large;
+}
