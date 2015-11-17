@@ -24,4 +24,5 @@ foreach ($rows as $row) {
 	array_push($directions, $row['d_text']);
 }
 $data['directions'] = $directions;
+echo json_encode($data);
 ?>
