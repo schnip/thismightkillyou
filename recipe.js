@@ -11,6 +11,7 @@ $(function() {
 
     var ingredientPointer = 0;
     var instructionPointer = 0;
+    var temp = 0;
 
     console.log("Items: " + numberOfItems);
 
@@ -51,17 +52,29 @@ $(function() {
         $('#listOfItems').append('<li>' + ingredients[ingredientPointer] + '</li>');
         ingredientPointer++;
 
-        $.ajax({
-            type: "GET",
-            url: 'get_random_step.php',
-            datatype: "text"
-        }).done(generateStep).fail(function() {console.log("Failed to generate step"); });
+        if(ingredientPointer > 0 && ingredientPointer % 2 == 0) {
+            $.ajax({
+                type: "GET",
+                url: 'get_random_step.php',
+                datatype: "text"
+            }).done(generateStep).fail(function () {
+                console.log("Failed to generate step");
+            });
+        }
     }
 
     function generateStep(data) {
-        console.log(data);
         var finalData = JSON.parse(data);
         console.log(finalData);
+        instructions[instructionPointer] = finalData.primary_action + " " +  materials[temp++] + " ";
+        if(finalData.secondary_action !== null) {
+           instructions[instructionPointer] +=  finalData.secondary_action + " " + materials[temp++] + " to create " + finalData.result + ".";
+        } else {
+            instructions[instructionPointer] += ".";
+        }
+
+        $('#listOfInstructions').prepend('<li>' + instructions[instructionPointer] + '</li>');
+        instructionPointer++;
 
     }
 });
