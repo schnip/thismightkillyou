@@ -5,6 +5,7 @@
         </div>
 
         <div class="navbar-content">
+            <p>Secured by honor system</p>
             <a id="signIn" class="navbar-link">
                 <button id="login" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                     Log In

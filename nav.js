@@ -21,6 +21,11 @@ $(function() {
         $('#signout').hide();
     });
 
+    $('#completeLogIn').click(function() {
+       Cookies.set('RecipeUser', $('#username').val());
+        window.location.href = "index.php";
+    });
+
 
         $('#passwordSignUp').keyup(checkPassword);
 
