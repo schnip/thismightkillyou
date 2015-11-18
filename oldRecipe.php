@@ -78,10 +78,11 @@ foreach ($rows as $row) {
         <!--</div>-->
 
         <div class="footer">
+            <a href="recipe.php">
             <button id="generateRecipe" class="btn btn-default">
                 Generate New Recipe
             </button>
-
+            </a>
         </div>
 
 
