@@ -85,11 +85,16 @@ function getFavorites(data) {
 function displayFavorites(data) {
     var parsedData = JSON.parse(data);
 
-    stringToPrint = "<a href=\"oldRecipe.php?recipe=" + parsedData.id +  "\">" +
+    var randomStatements = ["This is gonna be good!", "You might want to cook this...",
+    "If it's still alive, you did it wrong.", "Gordon Ramsey would approve of this recipe.",
+        "Man up and just eat it!", "Just like Mother used to make it.", "This recipe is great!",
+    "Hopefully this isn't toxic.", "We are not liable for any damages caused by making this recipe.", " "];
+    var getRandomStatement = randomStatements[Math.floor(Math.random() * (randomStatements.length - 1))];
+    stringToPrint = "<a href=\"oldRecipe.php?recipe_id=" + parsedData.id +  "\">" +
         "<div class=\"recipe\">" +
         "<div class=\"recipe-text\">" +
         "<h2>" + parsedData.name + "</h2>" +
-        "<h4>Ever wonder what happens when you blend a chicken?</h4>" +
+        "<h4>" + getRandomStatement + "</h4>" +
         "</div>" +
         "<div class=\"recipe-details\">" +
         "</div> " +
