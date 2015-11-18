@@ -22,3 +22,18 @@ insert into gen_title
 (word)
 values
 ('creme de la');
+
+insert into gen_title
+(word)
+values
+('sophisticated');
+
+insert into gen_title
+(word)
+values
+('crispy');
+
+insert into gen_title
+(word)
+values
+('tender');
