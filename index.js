@@ -83,10 +83,9 @@ function getFavorites(data) {
 }
 
 function displayFavorites(data) {
-    console.log(data);
     var parsedData = JSON.parse(data);
 
-    stringToPrint = "<a href=\"oldRecipe.php\">" +
+    stringToPrint = "<a href=\"oldRecipe.php?recipe=" + parsedData.id +  "\">" +
         "<div class=\"recipe\">" +
         "<div class=\"recipe-text\">" +
         "<h2>" + parsedData.name + "</h2>" +

@@ -133,8 +133,6 @@ $(function() {
         });
 
 
-        console.log("To Send", toSend);
-
         $.ajax({
             type: "GET",
             url: "add_recipe_user.php",
