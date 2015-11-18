@@ -21,7 +21,7 @@
     <?php include("nav.php"); ?>
 
     <div class="recipe container">
-        <h1 id="recipeName"></h1>
+        <h1 id="recipeName" class="form-control"></h1>
 
         <div id="itemsNeeded" class="element">
             <h3>What you'll need</h3>
