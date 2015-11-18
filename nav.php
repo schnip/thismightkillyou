@@ -5,8 +5,6 @@
         </div>
 
         <div class="navbar-content">
-            <a id="normalMeals" class="">Normal Meals</a>
-            <a id="ARAMeals" class="navbar-link">ARA Meals</a>
             <a id="signIn" class="navbar-link">
                 <button id="login" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                     Log In

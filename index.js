@@ -70,7 +70,7 @@ function successfulLogin(username, password) {
 
 function getFavorites(data) {
     var parsedData = JSON.parse(data);
-    listOfRecipeIds = parsedData.upvoted;
+    var listOfRecipeIds = parsedData.upvoted;
 
     _.each(listOfRecipeIds, function(id) {
         $.ajax({
