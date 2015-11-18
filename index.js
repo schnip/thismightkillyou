@@ -10,12 +10,17 @@ $(function() {
         $('#signup').hide();
 
         $('#signout').show();
+
+        $('.displayed-recipes').show();
+
     }
 
     else {
         $('#login').show();
         $('#signup').show();
         $('#signout').hide();
+
+        $('.displayed-recipes').hide();
     }
 
     $.ajax({
