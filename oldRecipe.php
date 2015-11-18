@@ -33,7 +33,7 @@ foreach ($rows as $row) {
     <?php include("nav.php"); ?>
 
     <div class="recipe container">
-        <h1 id="recipeName" class="jumbotron"><?= $recipe_name ?></h1>
+        <h1 id="recipeName" class="jumbotron"><?php echo $recipe_name; ?></h1>
 
         <div id="itemsNeeded" class="element">
             <h3>What you'll need</h3>
