@@ -1,3 +1,16 @@
+<?php
+$db = new PDO("mysql:dbname=thismightkillyou;host=localhost", "user", "t3st");
+$rows = $db->query('select * from recipes where id = ' . $_GET['recipe_id'] . ';');
+foreach ($rows as $row) {
+    $recipe_id = $row['id'];
+    $recipe_name = $row['name'];
+}
+$rows = $db->query("select * from directions where recipe_id=" . $recipe_id . ';');
+$directions = array();
+foreach ($rows as $row) {
+    array_push($directions, $row['d_text']);
+}
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -20,11 +33,22 @@
     <?php include("nav.php"); ?>
 
     <div class="recipe container">
-        <h1 id="recipeName" class="jumbotron"></h1>
+        <h1 id="recipeName" class="jumbotron"><?= $recipe_name ?></h1>
 
         <div id="itemsNeeded" class="element">
             <h3>What you'll need</h3>
             <ul id="listOfItems">
+            <?php
+                $rows = $db->query("select * from ingredients where recipe_id=" . $recipe_id . ';');
+                foreach ($rows as $row) {
+                    echo '<li>';
+                    echo $row['name'];
+                    echo ' ';
+                    echo $row['quantity'];
+                    echo '</li>';
+                    //array_push($ingredients, array('name' => $row['name'], 'quantity' => $row['quantity']));
+                }
+            ?>
             </ul>
         </div>
 
@@ -32,6 +56,16 @@
         <div id="instructions" class="element">
             <h3>Instructions</h3>
             <ul id="listOfInstructions">
+                <?php
+                    $rows = $db->query("select * from directions where recipe_id=" . $recipe_id . ';');
+                    $directions = array();
+                    foreach ($rows as $row) {
+                        echo '<li>';
+                        echo $row['d_text'];
+                        echo '</li>';
+                        //array_push($directions, $row['d_text']);
+                    }
+                ?>
                 <li>Mash the rest together in a large bowl.</li>
                 <li>Optionally bake at 350 degrees.</li>
             </ul>
