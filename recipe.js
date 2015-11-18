@@ -1,4 +1,4 @@
-/**
+    /**
  * Created by wrightjt on 11/13/2015.
  */
 $(function() {
@@ -24,6 +24,8 @@ $(function() {
     var numberOfItems = Math.floor(Math.random() * 4) + 4;
     var materials = [];
     var instructions = [];
+    var quantity = [];
+    var title = "";
 
     var instructionPointer = 0;
     var temp = 0;
@@ -36,7 +38,6 @@ $(function() {
     }).done(getFoodItems).fail(function() {console.log("CANT GET FOOD") });
 
     function getFoodItems(data) {
-        console.log(data);
         var parsedData = JSON.parse(data);
 
         var names = parsedData.names;
@@ -60,7 +61,9 @@ $(function() {
         $.ajax({
             type: "GET",
             url: 'get_random_title.php'
-        }).done(function(data) {$('#recipeName').text(materials[0] + " " + JSON.parse(data).title + " " + types[0]);
+        }).done(function(data) {
+            title = materials[0] + " " + JSON.parse(data).title + " " + types[0];
+            $('#recipeName').text(title);
         });
 
 
@@ -74,23 +77,26 @@ $(function() {
     function reportQuantity(data) {
         var parsedData = JSON.parse(data);
 
-        var quantity = parsedData.quantity;
+        var tempQuantity = parsedData.quantity;
 
-        console.log(quantity);
 
-        _.each(quantity, function(recipe, i) {
+        _.each(tempQuantity, function(recipe, i) {
            $('#listOfItems').prepend('<li>' + recipe + " " + materials[i] + '</li>');
+            quantity.push(recipe);
 
             $.ajax({
                 type: "GET",
                 url: 'get_random_step.php'
             }).done(generateStep);
         });
+
+        console.log("Quantities: ", quantity);
+        console.log("Materials: ", materials);
     }
 
     function generateStep(data) {
         var finalData = JSON.parse(data);
-        console.log(finalData);
+
         if(temp < materials.length) {
             instructions[instructionPointer] = finalData.primary_action + " " + materials[temp++] + " ";
             if (finalData.secondary_action !== null && finalData.secondary_action !== undefined) {
@@ -100,7 +106,6 @@ $(function() {
             }
             $('#listOfInstructions').prepend('<li>' + instructions[instructionPointer] + '</li>');
         } else {
-            console.log("filled");
         }
 
         instructionPointer++;
@@ -109,5 +114,33 @@ $(function() {
 
     $('#generateRecipe').click(function() {
        window.location.href = window.location.href;
+    });
+
+    $('#saveRecipe').click(function() {
+
+        toSend = {name: title};
+        _.each(quantity, function(quantity, i) {
+           toSend["quantity" + i] = quantity;
+        });
+
+        _.each(materials, function(material, i) {
+            toSend['ingredient' + i] = material;
+        });
+
+        _.each(instructions, function(instruction, i) {
+           toSend["direction" + i] = instruction;
+        });
+
+
+        console.log("To Send", toSend);
+
+        $.ajax({
+            type: "GET",
+            url: "add_recipe_user.php",
+            data: toSend
+        });
+
+        // Pass in name, ingredient, quantity, direction
+
     });
 });

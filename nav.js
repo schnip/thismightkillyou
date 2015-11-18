@@ -62,5 +62,4 @@ $(function() {
         $('#signup').hide();
 
         Cookies.set('RecipeUser', username);
-        Cookies.set('RecipePassword', password);
     }
