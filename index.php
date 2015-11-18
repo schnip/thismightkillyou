@@ -15,6 +15,7 @@
     <script src="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
 
     <script src="js-cookie.js"></script>
+    <script src="underscore.js"></script>
     <script src="nav.js"></script>
     <script src="index.js"></script>
 
@@ -38,25 +39,8 @@
             </div>
 
             <div class="displayed-recipes row">
-                <h2>Top Ten Weekly Recipes</h2>
+                <h2>Your Favorite Recipes</h2>
                 <!-- This will be dynamically generated through queries -->
-                <a href="#">
-                    <div class="recipe">
-                        <div class="recipe-text">
-                        <h2>Chicken A La Blended</h2>
-                        <h4>Ever wonder what happens when you blend a chicken?</h4>
-                        </div>
-                        <div class="recipe-details">
-                            <i class="fa fa-birthday-cake">
-                                <div class="counter bday-counter">6</div>
-                            </i>
-                            <i class="fa fa-heart">
-                                <div class="counter heart-counter">+4</div>
-                            </i>
-                        </div>
-                    </div>
-
-                </a>
             </div>
         </div>
 </body>

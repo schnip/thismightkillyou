@@ -18,6 +18,12 @@ $(function() {
         $('#signout').hide();
     }
 
+    $.ajax({
+        type: "GET",
+        url: 'get_favorites.php',
+        data: {username: Cookies.get('RecipeUser')}
+    }).done(getFavorites);
+
 
     $('#passwordSignUp').keyup(checkPassword);
 
@@ -60,4 +66,38 @@ function successfulLogin(username, password) {
     $('#signup').hide();
 
     $('logout').show();
+}
+
+function getFavorites(data) {
+    var parsedData = JSON.parse(data);
+    listOfRecipeIds = parsedData.upvoted;
+
+    _.each(listOfRecipeIds, function(id) {
+        $.ajax({
+            type: "GET",
+            data: {recipe_id: id},
+            url: 'get_recipe_by_id.php'
+        }).done(displayFavorites);
+    });
+
+}
+
+function displayFavorites(data) {
+    console.log(data);
+    var parsedData = JSON.parse(data);
+
+    stringToPrint = "<a href=\"oldRecipe.php\">" +
+        "<div class=\"recipe\">" +
+        "<div class=\"recipe-text\">" +
+        "<h2>" + parsedData.name + "</h2>" +
+        "<h4>Ever wonder what happens when you blend a chicken?</h4>" +
+        "</div>" +
+        "<div class=\"recipe-details\">" +
+        "</div> " +
+        "</div>" +
+        "</a>";
+
+
+
+    $('.displayed-recipes').append(stringToPrint);
 }

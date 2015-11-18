@@ -97,7 +97,7 @@ $(function() {
     function generateStep(data) {
         var finalData = JSON.parse(data);
 
-        if(temp < materials.length) {
+        if(temp < materials.length - 1) {
             instructions[instructionPointer] = finalData.primary_action + " " + materials[temp++] + " ";
             if (finalData.secondary_action !== null && finalData.secondary_action !== undefined) {
                 instructions[instructionPointer] += finalData.secondary_action + " " + materials[temp++] + " to create " + finalData.result + ".";
@@ -118,7 +118,8 @@ $(function() {
 
     $('#saveRecipe').click(function() {
 
-        toSend = {name: title};
+        toSend = {name: title,
+        username: Cookies.get('RecipeUser')};
         _.each(quantity, function(quantity, i) {
            toSend["quantity" + i] = quantity;
         });
