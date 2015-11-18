@@ -18,9 +18,9 @@
 .recipe {
     height: 80px;
     padding: 5px 5px 10px 10px;
-    -moz-box-shadow: 3px 3px 1px 0px #ccc;
-    -webkit-box-shadow: 3px 3px 1px 0px #ccc;
-    box-shadow: 3px 3px 1px 0px #ccc;
+    -moz-box-shadow: 3px 3px 1px 0 #ccc;
+    -webkit-box-shadow: 3px 3px 1px 0 #ccc;
+    box-shadow: 3px 3px 1px 0 #ccc;
 }
 
 .recipe h2 {
@@ -56,6 +56,3 @@
     margin-left: 28px;
 }
 
-label {
-    width: 100%;
-}

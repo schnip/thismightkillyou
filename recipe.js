@@ -3,8 +3,23 @@
  */
 $(function() {
 
-    $('#likeText').hide();
-    $('#hateText').hide();
+    if(Cookies.get('RecipeUser') != undefined) {
+        console.log("User logged in");
+
+        $('#login').hide();
+        $('#signup').hide();
+
+        $('#signout').show();
+    }
+
+    else {
+        $('#login').show();
+        $('#signup').show();
+        $('#signout').hide();
+    }
+
+    //$('#likeText').hide();
+    //$('#hateText').hide();
 
     var numberOfItems = Math.floor(Math.random() * 4) + 4;
     var materials = [];

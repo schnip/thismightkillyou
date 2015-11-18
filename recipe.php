@@ -9,7 +9,11 @@
     <link rel="stylesheet" type="text/css" href="nav.css" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+
     <script src="underscore.js"></script>
+    <script src="js-cookie.js"></script>
+    <script src="nav.js"></script>
     <script src="recipe.js"></script>
 </head>
 <body>

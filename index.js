@@ -2,6 +2,23 @@
  * Created by wrightjt on 11/16/2015.
  */
 $(function() {
+
+    if(Cookies.get('RecipeUser') != undefined) {
+        console.log("User logged in");
+
+        $('#login').hide();
+        $('#signup').hide();
+
+        $('#signout').show();
+    }
+
+    else {
+        $('#login').show();
+        $('#signup').show();
+        $('#signout').hide();
+    }
+
+
     $('#passwordSignUp').keyup(checkPassword);
 
     $('#reenterPassword').keyup(checkPassword);
@@ -10,15 +27,13 @@ $(function() {
         var password = $('#passwordSignUp').val();
         var username = $('#usernameSignUp').val();
 
-        console.log("Username: ", username, " Password: ", password);
-
         $.ajax({
             type: "GET",
             url: 'add_new_user.php',
             data: {username: username, password: password}
 
         }).done(function() {
-            $('#signUpModal').modal('hide');
+            successfulLogin(username, password);
         });
     });
 });
@@ -33,3 +48,16 @@ var checkPassword = function() {
         $('#completeSignUp').prop('disabled', true);
     }
 };
+
+function successfulLogin(username, password) {
+
+    $('#signUpModal').modal('hide');
+
+    Cookies.set('RecipeUser', username);
+    Cookies.set('RecipePassword', password);
+
+    $('#login').hide();
+    $('#signup').hide();
+
+    $('logout').show();
+}
